@@ -55,6 +55,32 @@
     console.log(reactTime);
 
    }
+   const reactButton = document.getElementById("reactButton");
+   reactButton.onclick = recordTime;
+
+   function startTime() {
+
+    for (let i = 0; i < 9; i++) {
+     setTimeout(function () {
+      const countElem = document.getElementById("counter");
+      countElem.innerHTML = i
+     },(8 - i) * 1000);
+    }
+    setTimeout(function() {
+      if (reactTime === undefined) {
+        const targetElement = document.getElementById("target");
+        targetElement.innerHTML = "Too Slow";
+      }
+      else {
+        const endTime = Date.now();
+        const reactionTime = endTime - reactTime;
+        const targetElement = document.getElementById("target");
+        targetElement.innerHTML = `Reaction time: ${reactionTime} ms`;
+      }
+    }, 8000);
+   }
+    const startTimerButton = document.getElementById("startTime");
+    startTimerButton.onclick = startTime;
 
   </script>
 
