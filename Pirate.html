@@ -1,119 +1,202 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Find Treasure</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" 
-    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" 
-    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"></script>
 </head>
-<body>
-    <body>
-        <header>
-            <h1>Find the Treasure by Tanniru Abhinaya</h1>
-        </header>
-        <p style="color: blue;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Click on the locations to search for treasure, beware the traps</p>
-        <p id="location" style="color: blue;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Number of locations checked is zero</p>  
-        <p id="Penalty" style="color: blue;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Penalty is zero</p>
-        <p style="color: blue;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Click for help</p>
-        <p id="Help" style="color: blue; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Help report</p>
 
-        <div class="container">
-            <div class="row mb-3">
-                <div class="col-md-2" >
-                    <img src="Location Treasure.jpg" alt="Location" width="100" height="100">
-                </div>
-              <div class="col-md-2">
-                <img src="Location Treasure.jpg" alt="Location" width="100" height="100">
-              </div>
-              <div class="col-md-2">
-                <img src="Location Treasure.jpg" alt="Location" width="100" height="100">
-              </div>
-              <div class="col-md-2">
-                <img src="Location Treasure.jpg" alt="Location" width="100" height="100">
-              </div>
-              <div class="col-md-2">
-                <img src="Location Treasure.jpg" alt="Location" width="100" height="100">
-              </div>
-            </div>
+<body style="background-color:lightgrey">
+
+  <body>
+
+    <body>
+      <header>
+        <h1>Find the Treasure by Tanniru Abhinaya</h1>
+      </header>
+      <p style="color: blue;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Click on the
+        locations to search for treasure, beware the traps</p>
+      <p id="location" style="color: blue;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">
+        Number of locations checked is zero</p>
+      <p id="penalty" style="color: blue;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">
+        Penalty is zero</p>
+      <p class="btn btn-primary" style="color:brown;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif" onclick="help()">
+        Click for help</p>
+      <p id="help" style="color: blue; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Help
+        report</p>
+
+      <div class="container">
+        <div class="row mb-3">
+          <div class="col-md-2">
+            <img id="a0" src="Location Treasure.jpg" alt="Location" width="100" height="100" onclick="check(0)">
+          </div>
+          <div class="col-md-2">
+            <img id="a1" src="Location Treasure.jpg" alt="Location" width="100" height="100" onclick="check(1)">
+          </div>
+          <div class="col-md-2">
+            <img id="a2" src="Location Treasure.jpg" alt="Location" width="100" height="100" onclick="check(2)">
+          </div>
+          <div class="col-md-2">
+            <img id="a3" src="Location Treasure.jpg" alt="Location" width="100" height="100" onclick="check(3)">
+          </div>
+          <div class="col-md-2">
+            <img id="a4" src="Location Treasure.jpg" alt="Location" width="100" height="100" onclick="check(4)">
+          </div>
         </div>
-        <div class="container">
-            <div class="row mb-3">
-                <div class="col-md-2" >
-                    <img src="Location Treasure.jpg" alt="Location" width="100" height="100">
-                </div>
-              <div class="col-md-2">
-                <img src="Location Treasure.jpg" alt="Location" width="100" height="100">
-              </div>
-              <div class="col-md-2">
-                <img src="Location Treasure.jpg" alt="Location" width="100" height="100">
-              </div>
-              <div class="col-md-2">
-                <img src="Location Treasure.jpg" alt="Location" width="100" height="100">
-              </div>
-              <div class="col-md-2">
-                <img src="Location Treasure.jpg" alt="Location" width="100" height="100">
-              </div>
-            </div>
+      </div>
+      <div class="container">
+        <div class="row mb-3">
+          <div class="col-md-2">
+            <img id="a5" src="Location Treasure.jpg" alt="Location" width="100" height="100" onclick="check(5)">
+          </div>
+          <div class="col-md-2">
+            <img id="a6" src="Location Treasure.jpg" alt="Location" width="100" height="100" onclick="check(6)">
+          </div>
+          <div class="col-md-2">
+            <img id="a7" src="Location Treasure.jpg" alt="Location" width="100" height="100" onclick="check(7)">
+          </div>
+          <div class="col-md-2">
+            <img id="a8" src="Location Treasure.jpg" alt="Location" width="100" height="100" onclick="check(8)">
+          </div>
+          <div class="col-md-2">
+            <img id="a9" src="Location Treasure.jpg" alt="Location" width="100" height="100" onclick="check(9)">
+          </div>
         </div>
-        <div class="container">
-            <div class="row mb-3">
-                <div class="col-md-2" >
-                    <img src="Location Treasure.jpg" alt="Location" width="100" height="100">
-                </div>
-              <div class="col-md-2">
-                <img src="Location Treasure.jpg" alt="Location" width="100" height="100">
-              </div>
-              <div class="col-md-2">
-                <img src="Location Treasure.jpg" alt="Location" width="100" height="100">
-              </div>
-              <div class="col-md-2">
-                <img src="Location Treasure.jpg" alt="Location" width="100" height="100">
-              </div>
-              <div class="col-md-2">
-                <img src="Location Treasure.jpg" alt="Location" width="100" height="100">
-              </div>
-            </div>
+      </div>
+      <div class="container">
+        <div class="row mb-3">
+          <div class="col-md-2">
+            <img id="a10" src="Location Treasure.jpg" alt="Location" width="100" height="100" onclick="check(10)">
+          </div>
+          <div class="col-md-2">
+            <img id="a11" src="Location Treasure.jpg" alt="Location" width="100" height="100" onclick="check(11)">
+          </div>
+          <div class="col-md-2">
+            <img id="a12" src="Location Treasure.jpg" alt="Location" width="100" height="100" onclick="check(12)">
+          </div>
+          <div class="col-md-2">
+            <img id="a13" src="Location Treasure.jpg" alt="Location" width="100" height="100" onclick="check(13)">
+          </div>
+          <div class="col-md-2">
+            <img id="a14" src="Location Treasure.jpg" alt="Location" width="100" height="100" onclick="check(14)">
+          </div>
         </div>
-        <div class="container">
-            <div class="row mb-3">
-                <div class="col-md-2" >
-                    <img src="Location Treasure.jpg" alt="Location" width="100" height="100">
-                </div>
-              <div class="col-md-2">
-                <img src="Location Treasure.jpg" alt="Location" width="100" height="100">
-              </div>
-              <div class="col-md-2">
-                <img src="Location Treasure.jpg" alt="Location" width="100" height="100">
-              </div>
-              <div class="col-md-2">
-                <img src="Location Treasure.jpg" alt="Location" width="100" height="100">
-              </div>
-              <div class="col-md-2">
-                <img src="Location Treasure.jpg" alt="Location" width="100" height="100">
-              </div>
-            </div>
+      </div>
+      <div class="container">
+        <div class="row mb-3">
+          <div class="col-md-2">
+            <img id="a15" src="Location Treasure.jpg" alt="Location" width="100" height="100" onclick="check(15)">
+          </div>
+          <div class="col-md-2">
+            <img id="a16" src="Location Treasure.jpg" alt="Location" width="100" height="100" onclick="check(16)">
+          </div>
+          <div class="col-md-2">
+            <img id="a17" src="Location Treasure.jpg" alt="Location" width="100" height="100" onclick="check(17)">
+          </div>
+          <div class="col-md-2">
+            <img id="a18" src="Location Treasure.jpg" alt="Location" width="100" height="100" onclick="check(18)">
+          </div>
+          <div class="col-md-2">
+            <img id="a19" src="Location Treasure.jpg" alt="Location" width="100" height="100" onclick="check(19)">
+          </div>
         </div>
-        <div class="container">
-            <div class="row mb-3">
-                <div class="col-md-2" >
-                    <img src="Location Treasure.jpg" alt="Location" width="100" height="100">
-                </div>
-              <div class="col-md-2">
-                <img src="Location Treasure.jpg" alt="Location" width="100" height="100">
-              </div>
-              <div class="col-md-2">
-                <img src="Location Treasure.jpg" alt="Location" width="100" height="100">
-              </div>
-              <div class="col-md-2">
-                <img src="Location Treasure.jpg" alt="Location" width="100" height="100">
-              </div>
-              <div class="col-md-2">
-                <img src="Location Treasure.jpg" alt="Location" width="100" height="100">
-              </div>
-            </div>
+      </div>
+      <div class="container">
+        <div class="row mb-3">
+          <div class="col-md-2">
+            <img id="a20" src="Location Treasure.jpg" alt="Location" width="100" height="100" onclick="check(20)">
+          </div>
+          <div class="col-md-2">
+            <img id="a21" src="Location Treasure.jpg" alt="Location" width="100" height="100" onclick="check(21)">
+          </div>
+          <div class="col-md-2">
+            <img id="a22" src="Location Treasure.jpg" alt="Location" width="100" height="100" onclick="check(22)">
+          </div>
+          <div class="col-md-2">
+            <img id="a23" src="Location Treasure.jpg" alt="Location" width="100" height="100" onclick="check(23)">
+          </div>
+          <div class="col-md-2">
+            <img id="a24" src="Location Treasure.jpg" alt="Location" width="100" height="100" onclick="check(24)">
+          </div>
         </div>
-        </body>
-        </html>
+      </div>
+
+      <script>
+        let ids = [
+          "a0", "a1", "a2", "a3", "a4",
+          "a5", "a6", "a7", "a8", "a9",
+          "a10", "a11", "a12", "a13", "a14",
+          "a15", "a16", "a17", "a18", "a19",
+          "a20", "a21", "a22", "a23", "a24"
+        ];
+
+        let checkCount = 0;
+        let penalty = 0;
+        let lastCheck = 0;
+        let treasureLocation = 5;
+        let trapLocation = 18;
+        let gameOver = false;
+
+        function check(position) {
+          if (gameOver) return;
+          let id = ids[position];
+          let ab = document.getElementById(id);
+          if (position === treasureLocation) {
+            ab.src = "Treasure.jpg";
+            gameOver = true;
+            penalty -= 3;
+          } else if (position === trapLocation) {
+            ab.src = "Trap.jpg";
+            gameOver = true;
+            penalty += 4;
+          } else {
+            ab.src = "Bones.jpg";
+          }
+          checkCount++;
+          penalty++;
+          document.getElementById("location").textContent = `No. of locations ${checkCount}`;
+          document.getElementById("penalty").textContent = `penalty is ${penalty}`;
+          lastCheck = position;
+        }
+        function help() {
+          var helpText = "";
+          var treasureCol = parseInt(treasureLocation % 5);
+          var treasureRow = parseInt(treasureLocation / 5);
+          var lastCheckCol = parseInt(lastCheck % 5);
+          var lastCheckRow = parseInt(lastCheck / 5);
+          var colCondition = treasureCol == lastCheckCol;
+          var rowCondition = treasureRow == lastCheckRow;
+          var colDiff = Math.abs(lastCheckCol - treasureCol);
+          var rowDiff = Math.abs(lastCheckRow - treasureRow);
+          if (colCondition || rowCondition) {
+            if (rowDiff == 1 || colDiff == 1) {
+              helpText = "Can Smell It";
+            }
+            else if (rowDiff == 2 || colDiff == 2) {
+              helpText = "Close Matie";
+            }
+            else {
+              helpText = "Step Faster";
+            }
+          }
+          else if (rowDiff == 1 && colDiff == 1) {
+            helpText = "Close Matie";
+          }
+          else {
+            helpText = "Step Faster";
+          }
+          penalty += 2;
+          document.getElementById("penalty").innerHTML = "Penalty is : " + penalty;
+          document.getElementById("help").innerHTML = helpText;
+        }
+      </script>
+    </body>
+
+</html>
