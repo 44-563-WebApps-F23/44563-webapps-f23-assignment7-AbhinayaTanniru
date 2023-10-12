@@ -4,7 +4,7 @@
 
  <head>
 
-  <title>  Speed check</title>
+  <title>Abhinaya - Speed check</title>
 
   <meta charset="utf-8" />
 
@@ -14,7 +14,61 @@
 
    rel="stylesheet"
 
-   href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+   href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+
+  />
+
+  <style>
+
+   /* Center the content */
+
+   body {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    height: 100vh;
+
+    margin: 0;
+
+    background-color:beige;
+
+   }
+
+   h1 {
+
+    text-align: center;
+
+   }
+
+   #target {
+
+    font-size: 24px;
+
+    text-align: center;
+
+   }
+
+   #counter {
+
+    font-size: 36px;
+
+    text-align: center;
+
+   }
+
+   .btn {
+
+    margin: 10px;
+
+   }
+
+  </style>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -24,23 +78,21 @@
 
  </head>
 
- <body style="background-color:beige"></body>
-
  <body>
 
   <header>
 
-   <h1 class="text-center">Abhinaya Tanniru Speed check</h1>
+   <h1>Abhinaya - Speed check</h1>
 
   </header>
 
-  <div id="target"><i>Your Time:</i></div>
+  <div id="target">Your Time: </div>
 
-  <div id="counter"><i>Count:</i></div>
+  <div id="counter">Count: </div>
 
-  <button id="startTime" class="btn btn-warning"><i>Start Timer</i></button>
+  <button id="startTime" class="btn btn-info">Start Timer</button>
 
-  <button id="reactButton" class="btn btn-primary"  onclick="recordTime()"><i>React</i></button>
+  <button id="reactButton" class="btn btn-success">React</button>
 
   <script>
 
@@ -53,35 +105,64 @@
     console.log(reactTime);
 
    }
-   const reactButton = document.getElementById("reactButton");
-   reactButton.onclick = recordTime;
+
+   const reactBtn = document.getElementById("reactButton");
+
+   reactBtn.onclick = recordTime;
 
    function startTime() {
 
-    for (let i = 0; i < 9; i++) {
+    const countdownStart = Math.floor(Math.random() * 9) + 2; // Random value between 2 and 10
+
+    console.log(`Countdown starts from: ${countdownStart}`);
+
+    for (let i = countdownStart; i >= 0; i--) {
+
      setTimeout(function () {
+
       const countElem = document.getElementById("counter");
-      countElem.innerHTML = i
-     },(8 - i) * 1000);
+
+      countElem.innerHTML = i;
+
+     }, (countdownStart - i) * 1000);
+
     }
-    setTimeout(function() {
-      if (reactTime === undefined) {
-        const targetElement = document.getElementById("target");
-        targetElement.innerHTML = "Too Slow";
-      }
-      else {
-        const endTime = Date.now();
-        const reactionTime = endTime - reactTime;
-        const targetElement = document.getElementById("target");
-        targetElement.innerHTML = `Reaction time: ${reactionTime} ms`;
-      }
-    }, 8000);
+
+    setTimeout(function () {
+
+     if (reactTime === undefined) {
+
+      // User was too slow
+
+      const targetElement = document.getElementById("target");
+
+      targetElement.innerHTML = "Too Slow";
+
+     } else {
+
+      // User clicked in time
+
+      const endTime = Date.now();
+
+      const reactionTime = endTime - reactTime;
+
+      const targetElement = document.getElementById("target");
+
+      targetElement.innerHTML = `Reaction time: ${reactionTime} ms`;
+
+     }
+
+    }, countdownStart * 1000);
+
    }
-    const startTimerButton = document.getElementById("startTime");
-    startTimerButton.onclick = startTime;
+
+   const startTimerButton = document.getElementById("startTime");
+
+   startTimerButton.onclick = startTime;
 
   </script>
 
  </body>
 
 </html>
+
