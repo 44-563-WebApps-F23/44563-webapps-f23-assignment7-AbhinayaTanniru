@@ -1,47 +1,25 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
  <head>
-
   <meta charset="UTF-8" />
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Abhinaya Builds a Merger</title>
-
   <style>
-
    body {
-
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
-
     justify-content: center;
-
     height: 50vh;
-
     margin: 0;
-
     background-color: wheat;
-
    }
-
    #inputText {
-
     padding: 10px;
-
     font-size: 18px;
-
     border: 2px solid #ccc;
-
     border-radius: 5px;
-
     width: 100%;
-
     max-width: 300px;
 
    }
@@ -120,19 +98,14 @@
 
  <body>
 
-  <!-- 7.2 -->
-
   <header>
 
    <h1>Abhinaya Builds a Merger</h1>
 
   </header>
 
-  <!-- 7.5 -->
 
   <div class="flex-container" id="target">
-
-   <!-- 7.6.a -->
 
    <div class="merger">row item 1</div>
 
@@ -160,21 +133,12 @@
 
   <div class="buttons-container">
 
-   <!-- 8.1 -->
-
    <button onclick="addFront()">Add front</button>
-
-   <!-- 8.1 -->
 
    <button onclick="remove()">Remove</button>
 
-   <!-- 7.3 -->
-
-   <!-- 7.4 -->
 
    <button onclick="addEnd()">Add end</button>
-
-   <!-- BONUS -->
 
    <button onclick="swap()">Swap</button>
 
@@ -182,25 +146,20 @@
 
   <script>
 
-   // 7.6
 
    function addEnd() {
 
-    // 7.6.b
 
     let element = document.createElement("div");
 
     let inputValue = document.getElementById("inputText").value;
 
-    // 7.6.c
 
     element.innerHTML = inputValue;
 
-    // 7.6.d
 
     element.className = "merger";
 
-    // 7.6.e
 
     let container = document.getElementById("target");
 
@@ -208,11 +167,9 @@
 
    }
 
-   // 8.5
 
    function addFront() {
 
-    // 8.7
 
     let element = document.createElement("div");
 
@@ -222,25 +179,18 @@
 
     element.className = "merger";
 
-    // 8.8
-
     let container = document.getElementById("target");
-
-    // 8.8.a, 8.8.b, 8.8.c
 
     container.insertBefore(element, container.firstChild);
 
    }
 
-   // 8.2
 
    function remove() {
 
-    // 8.3
 
     let mergerItems = document.getElementsByClassName("merger");
 
-    // 8.4
 
     let itemsLength = mergerItems.length;
 
@@ -254,7 +204,6 @@
 
    }
 
-  // BONUS
 
    function swap() {
 
@@ -310,7 +259,6 @@
 
     else {
 
-     // Non-adjacent elements
 
      container.insertBefore(item2, nextItem1);
 
